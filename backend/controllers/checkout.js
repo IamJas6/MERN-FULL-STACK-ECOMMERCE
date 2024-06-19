@@ -55,7 +55,7 @@ const confirmCheckout = async (req, res) => {
         const { _id: userId } = req.user
         const { orderId } = req.params
 
-        const orderinfo = await Order.findOne({ _id: orderId, user: userId, status: 'initiated' })
+        const orderinfo = await Order.findOne({ _id: orderId, user: userId, status: 'Initiated' })
         if (!orderinfo){
             return res.status(400).json({
                 mssg: "Order not found"
